@@ -1,7 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {Box} from '@mui/material';
+import { getEmpresas } from './api/empresaAPI';
+
+
 function App() {
   const [count, setCount] = useState(0)
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const empresas = await getEmpresas();
+      console.log(empresas);
+    };
+    fetchData();
+  }, [count]);
 
   return (
     <Box sx={{
