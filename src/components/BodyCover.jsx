@@ -1,39 +1,41 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Fade, Typography } from "@mui/material";
 import palette from "../theme/palette";
 import fonts from "../theme/fonts";
 import barberia from "../assets/generated.PNG";
 
 export default function BodyCover(titulo, subtitulo) {
   return (
+    <Fade in={true} timeout={2000}>
+      <Box
+        sx={{
+          backgroundImage: `url(${barberia})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          height: "60vh",
+          display: "flex",
+          flexDirection: { lg: "row", xs: "column" },
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
         <Box
           sx={{
-            backgroundImage: `url(${barberia})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            height: "60vh",
+            paddingY: { lg: "0px", xs: "10px" },
             display: "flex",
-            flexDirection: { lg: "row", xs: "column" },
-            alignItems: "center",
+            flexDirection: "column",
             justifyContent: "center",
-            position: "relative",
+            alignItems: "center",
+            width: "100%",
+            height: { lg: "100px", xs: "150px" },
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
           }}
         >
-          <Box
-            sx={{
-              paddingY: { lg: "0px", xs: "10px" },
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-              height: "100px",
-              backgroundColor: "rgba(0, 0, 0, 0.4)",
-            }}
-          >
+          <Fade in={true} timeout={3000}>
             <Typography
               variant="h5"
-              fontFamily="monospace"
+              fontFamily={fonts.primary}
               sx={{
                 color: palette.primary,
                 width: { lg: "60%", xs: "90%" },
@@ -44,19 +46,24 @@ export default function BodyCover(titulo, subtitulo) {
             >
               {titulo}
             </Typography>
+          </Fade>
+          <Fade in={true} timeout={4000}>
             <Typography
               variant="h3"
-              fontFamily="fantasy"
+              fontFamily={fonts.secondary}
               sx={{
                 color: palette.dangerPrimary,
                 width: { lg: "60%", xs: "90%" },
                 zIndex: 10,
                 textAlign: { lg: "end", xs: "center" },
+                WebkitTextStroke: `0.5px ${palette.primary}`,
               }}
             >
               {subtitulo}
             </Typography>
-          </Box>
+          </Fade>
         </Box>
+      </Box>
+    </Fade>
   );
 }

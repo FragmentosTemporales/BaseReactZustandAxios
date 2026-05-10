@@ -41,7 +41,7 @@ function About() {
         <Typography
           variant="h6"
           fontStyle="italic"
-          fontFamily="fantasy"
+          fontFamily={fonts.secondary}
           sx={{
             color: palette.textMuted,
             textAlign: "justify",

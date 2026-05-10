@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import HomeLayout from "../layouts/homeLayout.jsx";
 import palette from "../theme/palette.jsx";
-
+import fonts from "../theme/fonts.jsx";
 import BodyHeader from "../components/BodyHeader.jsx";
 import BodyCover from "../components/BodyCover.jsx";
 
@@ -37,7 +37,7 @@ function Home() {
         <Typography
           variant="h6"
           fontStyle="italic"
-          fontFamily="fantasy"
+          fontFamily={fonts.secondary}
           sx={{
             color: palette.textMuted,
             textAlign: "justify",

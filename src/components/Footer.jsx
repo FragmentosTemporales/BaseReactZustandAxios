@@ -11,7 +11,15 @@ import InsertInvitationIcon from "@mui/icons-material/InsertInvitation";
 import LockIcon from "@mui/icons-material/Lock";
 import { Link } from "react-router-dom";
 
+import {
+  APIProvider,
+  Map,
+  AdvancedMarker,
+  Marker,
+} from "@vis.gl/react-google-maps";
+
 export const Footer = () => {
+  const apikey = import.meta.env.VITE_API_KEY;
   return (
     <footer
       style={{
@@ -27,6 +35,7 @@ export const Footer = () => {
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
+          width: "100%"
         }}
       >
         <Box
@@ -41,7 +50,7 @@ export const Footer = () => {
               lg: "row",
             },
             alignItems: "center",
-            width: "80%",
+            width: {lg:"90%", md:"100%", xs:"100%"},
           }}
         >
           {/* CONTACTO */}
@@ -89,7 +98,7 @@ export const Footer = () => {
                 fontFamily={fonts.primary}
                 sx={{ color: "white" }}
               >
-                Av. Siempre Viva 123, Springfield
+                Av. Alcalde Pedro Alarcón 851, San Miguel.
               </Typography>
             </Box>
 
@@ -250,11 +259,14 @@ export const Footer = () => {
             />
 
             <Box
+              component={Link}
+              to="/contact"
               sx={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 pt: 1,
+                textDecoration: "none",
               }}
             >
               <EmailIcon
@@ -277,6 +289,7 @@ export const Footer = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 pt: 1,
+                textDecoration: "none",
               }}
             >
               <InsertInvitationIcon
@@ -299,6 +312,7 @@ export const Footer = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 pt: 1,
+                textDecoration: "none",
               }}
             >
               <LockIcon
@@ -319,14 +333,35 @@ export const Footer = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            width: "80%",
-            border: "1px solid white",
+            width: {lg:"90%", md:"100%", xs:"100%"},
             minHeight: "200px",
             justifyContent: "center",
+            paddingBottom: 4,
           }}
         >
-          <Box sx={{ color: "white" }}>ACA IRA UN MAPA</Box>
+          <Box sx={{ color: "white", width: "100%", height: "300px" }}>
+            <APIProvider apiKey={apikey}>
+              <Map
+                style={{ width: "100%", height: "100%" }}
+                defaultCenter={{
+                  lat: -33.48678829352804,
+                  lng: -70.64524236071244,
+                }}
+                defaultZoom={16}
+                gestureHandling="greedy"
+                disableDefaultUI
+              >
+                <Marker
+                  position={{
+                    lat: -33.48678829352804,
+                    lng: -70.64524236071244,
+                  }}
+                />
+              </Map>
+            </APIProvider>
+          </Box>
         </Box>
+
       </Box>
     </footer>
   );
