@@ -10,7 +10,7 @@ import AccessTimeFilledIcon from "@mui/icons-material/AccessTimeFilled";
 import InsertInvitationIcon from "@mui/icons-material/InsertInvitation";
 import LockIcon from "@mui/icons-material/Lock";
 import { Link } from "react-router-dom";
-
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import {
   APIProvider,
   Map,
@@ -20,6 +20,36 @@ import {
 
 export const Footer = () => {
   const apikey = import.meta.env.VITE_API_KEY;
+
+  const Whatsapp = () => {
+    return (
+      <Box
+        style={{
+          position: "fixed",
+          width: "55px",
+          height: "55px",
+          lineHeight: "70px",
+          bottom: "30px",
+          right: "30px",
+          background: "#1fa560",
+          color: "#fff",
+          borderRadius: "50px",
+          textAlign: "center",
+          fontSize: "30px",
+          zIndex: "1",
+          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Link
+          to="https://api.whatsapp.com/send?phone=56963410066&text=Hola, quiero una reserva."
+          target="blank"
+        >
+          <WhatsAppIcon sx={{ color: "#e6ffda", fontSize: "35px" }} />
+        </Link>
+      </Box>
+    );
+  };
+
   return (
     <footer
       style={{
@@ -35,9 +65,10 @@ export const Footer = () => {
           justifyContent: "center",
           flexDirection: "column",
           alignItems: "center",
-          width: "100%"
+          width: "100%",
         }}
       >
+        {<Whatsapp />}
         <Box
           sx={{
             display: "flex",
@@ -50,7 +81,7 @@ export const Footer = () => {
               lg: "row",
             },
             alignItems: "center",
-            width: {lg:"90%", md:"100%", xs:"100%"},
+            width: { lg: "90%", md: "100%", xs: "100%" },
           }}
         >
           {/* CONTACTO */}
@@ -333,7 +364,7 @@ export const Footer = () => {
           sx={{
             display: "flex",
             alignItems: "center",
-            width: {lg:"90%", md:"100%", xs:"100%"},
+            width: { lg: "90%", md: "100%", xs: "100%" },
             minHeight: "200px",
             justifyContent: "center",
             paddingBottom: 4,

@@ -9,7 +9,7 @@ import theme from './theme/theme.jsx'  // tu archivo de tema
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline />   {/* normaliza estilos y aplica tipografía global */}
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </StrictMode>,

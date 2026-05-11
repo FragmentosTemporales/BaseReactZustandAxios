@@ -19,7 +19,7 @@ export default function BodyHeader(titulo) {
         sx={{
           color: palette.primaryDark,
           textAlign: "center",
-          marginY: "15px",
+          marginTop: "15px",
           width: "80%",
         }}
       >

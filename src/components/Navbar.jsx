@@ -18,6 +18,7 @@ import fonts from "../theme/fonts";
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
 
+
 export default function Navbar() {
   const navItems = [
     { label: "NUESTRO EQUIPO", path: "/equipo" },
@@ -33,6 +34,7 @@ export default function Navbar() {
   const toggleDrawer = (state) => () => {
     setOpen(state);
   };
+
 
   return (
     <>

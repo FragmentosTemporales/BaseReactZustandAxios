@@ -30,24 +30,24 @@ function About() {
       {BodyHeader("BIENVENIDO A NUESTRA BARBERÍA")}
 
       <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: palette.primary,
-        }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: palette.primary,
+          }}
       >
         <Typography
           variant="h6"
           fontStyle="italic"
           fontFamily={fonts.secondary}
-          sx={{
-            color: palette.textMuted,
-            textAlign: "justify",
-            marginTop: "20px",
-            width: "80%",
-          }}
+            sx={{
+              color: palette.textMuted,
+              textAlign: "center",
+              marginY: "10px",
+              width: "80%",
+            }}
         >
           En The Classic Barbershop fusionamos la elegancia atemporal de la barbería tradicional 
           con la precisión y comodidad del servicio contemporáneo. Aquí, cada corte es una obra 
@@ -67,7 +67,7 @@ function About() {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: palette.primary,
-          paddingY: "20px",
+          paddingY: "10px",
         }}
       >
         {horarios.map((horario, index) => (

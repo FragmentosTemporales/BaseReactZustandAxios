@@ -22,13 +22,13 @@ export default function BodyCover(titulo, subtitulo) {
       >
         <Box
           sx={{
-            paddingY: { lg: "0px", xs: "10px" },
+            paddingY: { lg: "10px", xs: "10px" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            height: { lg: "100px", xs: "150px" },
+            // height: { lg: "100px", xs: "150px" },
             backgroundColor: "rgba(0, 0, 0, 0.4)",
           }}
         >
@@ -52,11 +52,11 @@ export default function BodyCover(titulo, subtitulo) {
               variant="h3"
               fontFamily={fonts.secondary}
               sx={{
-                color: palette.dangerPrimary,
+                color: "#c0a062",
                 width: { lg: "60%", xs: "90%" },
                 zIndex: 10,
                 textAlign: { lg: "end", xs: "center" },
-                WebkitTextStroke: `0.5px ${palette.primary}`,
+                // WebkitTextStroke: `0.5px ${palette.primary}`,
               }}
             >
               {subtitulo}

@@ -17,7 +17,7 @@ export default function HomeLayout({ children }) {
       minHeight: '100vh',
     }}>
       <Navbar/>
-      <Box sx={{minHeight:"95vh"}}>
+      <Box sx={{minHeight:"50vh"}}>
       {children}
       </Box>
       <Footer />
